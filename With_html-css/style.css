@@ -1,0 +1,423 @@
+/* ===================================================
+   GENERAL STYLES
+================================================== */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #f5f5f5;
+  background-color: #1a1a2e;
+}
+h1, h2, h3 {
+  margin: 0.5rem 0;
+}
+a {
+  text-decoration: none;
+}
+section {
+  padding: 3rem 1rem;
+}
+
+/* ===================================================
+   NAVBAR STYLES
+================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding:1rem;
+  background: rgba(102,126,234,0.95);
+  color:white;
+  z-index:1000;
+}
+.navbar .menu {
+  display:flex;
+  gap:1rem;
+}
+.navbar .menu a {
+  color:white;
+  font-size:1rem;
+}
+.navbar .menu a:hover {
+  color:#f5f5f5;
+}
+.navbar .toggle,
+.navbar .theme-toggle {
+  font-size:1.5rem;
+  cursor:pointer;
+}
+.navbar .theme-toggle {
+  margin-left:1rem;
+}
+@media (max-width:768px) {
+  .navbar .menu {
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:60px;
+    right:20px;
+    background:#222;
+    padding:1rem;
+    border-radius:5px;
+  }
+  .navbar .menu.active {
+    display:flex;
+  }
+}
+
+/* ===================================================
+   HERO STYLES
+================================================== */
+.hero {
+  height:100vh;
+  background: linear-gradient(135deg,#0a207f 40%,#c28ff4 100%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction: column;
+  text-align:center;
+}
+.content h1 {
+  font-size:3rem;
+}
+.content p {
+  font-size:1.25rem;
+}
+.content .btn {
+  margin-top:1rem;
+  padding:1rem 2rem;
+  background:#061865;
+  color:#f5f5f5;
+  border-radius:5px;
+  font-weight:bold;
+}
+.content .btn:hover {
+  background:#764ba2;
+}
+.profile-image {
+  display:block;
+  margin:1rem auto;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #667eea;
+}
+.content .social-links {
+  margin-top:1rem;
+}
+.content .social-links a {
+  font-size:1.5rem;
+  margin:0 0.5rem;
+}
+
+/* ===================================================
+   SECTIONS STYLES
+================================================== */
+#about, #education, #achievements, #skills, #projects, #work-experience, #contact {
+  background:#eeeef4;
+}
+#about p, #projects p, #contact p {
+  color:#2c17ca;
+}
+#about h2, #projects h2, #contact h2,
+#education h2, #achievements h2, #skills h2, #work-experience h2 {
+  text-align:center;
+  color:#222222;
+  font-size:2rem;
+}
+#about p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===================================================
+   ENHANCED EDUCATION, ACHIEVEMENTS, SKILLS, WORK EXPERIENCE SECTIONS
+================================================== */
+.education-grid,
+.achievement-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.education-card,
+.achievement-card {
+  flex: 1 1 250px;
+  margin: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  background: #f9f9fb;
+  color: #1a1a2e;
+  box-shadow: 0px 4px 15px rgba(0,0,0,.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.education-card h3,
+.achievement-card h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333333;
+}
+.education-card p,
+.achievement-card p {
+  font-size: 1rem;
+  color: #555555;
+}
+.education-card:hover,
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 25px rgba(0,0,0,.15);
+  background: #667eea;
+}
+.education-card:hover h3,
+.achievement-card:hover h3 {
+  color: #ffffff;
+}
+.education-card:hover p,
+.achievement-card:hover p {
+  color: #e4e4ec;
+}
+
+/* ===================================================
+   PROJECTS GRID STYLES
+================================================== */
+.project-grid {
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  gap:1.5rem;
+}
+.project-card {
+  flex:1 1 250px;
+  position:relative;
+  text-align:center;
+  text-decoration:none;
+  color:inherit;
+  overflow:hidden;
+  border-radius:8px;
+  transition:transform 0.3s ease;
+}
+.project-card:hover {
+  transform:translateY(-5px);
+}
+.project-image {
+  position:relative;
+}
+.project-image img {
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:8px;
+}
+.project-image .overlay {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(102,126,234,0.8);
+  color:#e4e4ec;
+  font-size:1.25rem;
+  font-weight:bold;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  border-radius:8px;
+  transition:opacity 0.3s ease;
+}
+.project-image:hover .overlay {
+  opacity:1;
+}
+.project-card h3 {
+  font-size:1.25rem;
+  color: #021e3d;
+  margin:0.5rem 0;
+}
+.project-card p {
+  font-size:1rem;
+  color:#4144ed;
+}
+
+/* ===================================================
+   CONTACT STYLES
+================================================== */
+#contact form {
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  max-width:600px;
+  margin:0 auto;
+}
+#contact input, #contact textarea {
+  padding:1rem;
+  font-size:1rem;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+#contact button {
+  padding:1rem;
+  font-size:1rem;
+  background:#667eea;
+  color:#f5f5f5;
+  border-radius:5px;
+  cursor:pointer;
+  border:none;
+}
+#contact button:hover {
+  background:#764ba2;
+}
+
+/* ===================================================
+   FOOTER STYLES
+================================================== */
+footer {
+  text-align:center;
+  padding:1rem;
+  background:#180253;
+  color:#f5f5f5;
+}
+footer .social-links {
+  margin:1rem 0;
+}
+footer .social-links a {
+  font-size:1.25rem;
+  margin:0 0.5rem;
+}
+footer .social-links a:hover {
+  color:#667eea;
+}
+
+/* ===================================================
+   ANIMATIONS
+================================================== */
+.fade-in {
+  opacity:0;
+  animation: fadeInAnimation 1.5s ease-in both;
+}
+@keyframes fadeInAnimation {
+  from {
+    opacity:0;
+    transform:translateY(15px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ===================================================
+   DARK MODE STYLES
+================================================== */
+body.dark {
+  background-color:#f5f5f5;
+  color:#1a1a2e;
+}
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p,
+body.dark a {
+  color:#1a1a2e;
+}
+
+/* ===================================================
+   RESPONSIVE STYLES
+================================================== */
+@media (max-width:768px) {
+  .project-grid,
+  .achievement-grid,
+  .education-grid {
+    flex-direction:column;
+    align-items:center;
+  }
+}
+
+/* ===================================================
+   CHATBOX STYLES
+================================================== */
+.chatbot-toggle {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background: #667eea;
+  color: #f5f5f5;
+  font-size: 1.5rem;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+}
+.chatbot-toggle:hover {
+  background: #764ba2;
+}
+.chatbox {
+  position: fixed;
+  bottom: 80px;
+  left: 30px;
+  width: 300px;
+  max-width: 90vw;
+  height: 400px;
+  background: #f5f5f5;
+  color: #1a1a2e;
+  border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  z-index: 1001;
+}
+.chatbox.active {
+  display: flex;
+}
+.chatbox-header {
+  background: #667eea;
+  color: #f5f5f5;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.chatbox-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+.chatbox-input {
+  border: none;
+  border-top:1px solid #ccc;
+  padding: 10px;
+  font-size:1rem;
+}
+.user-msg {
+  background:#667eea;
+  color:#f5f5f5;
+  padding:8px;
+  border-radius:5px;
+  margin:5px 0;
+  align-self:flex-end;
+  max-width:80%;
+}
+.bot-msg {
+  background:#e4e4ec;
+  color:#1a1a2e;
+  padding:8px;
+  border-radius:5px;
+  margin:5px 0;
+  align-self:flex-start;
+  max-width:80%;
+}
+
+/* ===================================================
+   ICON GENERAL STYLES
+================================================== */
+i.fa-solid,
+i.fa-brands {
+  color: #f5f5f5 !important;
+  font-size: 1.5rem;
+}
